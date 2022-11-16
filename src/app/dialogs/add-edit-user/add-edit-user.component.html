@@ -1,0 +1,55 @@
+<h2 mat-dialog-title>{{addEditTitle | titlecase}}</h2>
+<mat-dialog-content>
+    <form>
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Andrew" [formControl]="firstName">
+            <mat-error *ngIf="firstName.hasError('required')">First Name is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="margin-left" color="accent">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Potter" [formControl]="lastName">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="outline" color="accent">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="potter@gmail.com" [formControl]="email">
+            <mat-error *ngIf="email.invalid">{{validatorEmail(email)}}</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="margin-left" color="accent">
+            <mat-label>Contact</mat-label>
+            <input matInput type="number" placeholder="2323443323" [formControl]="contact">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="input-block" color="accent">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="password">
+            <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-block" color="accent">
+            <mat-label>Address</mat-label>
+            <input matInput placeholder="St. Colony" [formControl]="address">
+        </mat-form-field>
+
+        <div class="choose-img-div">
+            <button mat-button (click)="openImageSelection()">Choose Image</button>
+            <span *ngIf="profileImg">
+                <img src="{{profileImg}}" alt="img" class="img-view">
+            </span>
+        </div>
+
+    </form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close color="accent">Cancel</button>
+    <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+    <button mat-button [mat-dialog-close]="true" (click)="submitForm()" color="primary"
+        [disabled]="email.invalid || password.invalid || firstName.invalid">
+        Submit
+    </button>
+</mat-dialog-actions>

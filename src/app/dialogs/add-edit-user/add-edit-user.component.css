@@ -1,0 +1,15 @@
+mat-form-field.margin-left {
+    margin-left: var(--m-x);
+}
+
+.img-view {
+    height: 30px;
+    width: 30px;
+}
+
+.choose-img-div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}

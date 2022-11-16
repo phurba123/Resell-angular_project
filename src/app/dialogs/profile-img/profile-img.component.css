@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 50vw;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.img-container {
+    height: 60px;
+    width: 60px;
+}
+
+.img-container img {
+    width: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        max-width: 90vw;
+    }
+}

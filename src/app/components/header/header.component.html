@@ -1,0 +1,25 @@
+<div class="navigation-container">
+    <div class="icon">
+        <a>
+            <span>Resell</span>
+        </a>
+    </div>
+
+    <!-- search place -->
+    <div class="search-section">
+        <input placeholder="Find Products...">
+        <!-- <input type="text" placeholder="search "> -->
+    </div>
+
+    <!-- sell-link -->
+    <div class="sell-link">
+        <!-- links-section -->
+        <div class="links-section" *ngIf="!isLoggedIn">
+            <button mat-button (click)="openLogin()">Login</button>
+        </div>
+        <button mat-raised-button  color="primary">
+            <mat-icon>add</mat-icon>
+            SELL
+        </button>
+    </div>
+</div>

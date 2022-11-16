@@ -1,0 +1,18 @@
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+}
+.search-section {
+    height: 35px;
+    box-sizing: border-box;
+    width: 30%;
+}
+.search-section input {
+    height: 100%;
+    width: 100%;
+    border: 1px solid gray;
+}
+.sell-link {
+    display: flex;
+    gap: 10px;
+}
