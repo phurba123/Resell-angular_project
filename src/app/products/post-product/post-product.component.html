@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="categories">
+
+        <h2>Categories</h2>
+        <mat-selection-list #categoryList [multiple]="false" [(ngModel)]="selectedCategory" (ngModelChange)="onSelection($event)">
+            <mat-list-option *ngFor="let category of categories" [value]="category">
+              {{category.categoryTypeName}}
+            </mat-list-option>
+        </mat-selection-list>
+
+    </div>
+
+    <div class="post" *ngIf="selectedCategory">
+        <h2>Create a new post for {{selectedCategory[0].categoryTypeName}}</h2>
+    </div>
+</div>

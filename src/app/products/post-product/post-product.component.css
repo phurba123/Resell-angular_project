@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: var(--m-y) var(--m-x);
+}
+
+.container .categories {
+    flex-basis: 40%;
+}

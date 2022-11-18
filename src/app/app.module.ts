@@ -14,6 +14,7 @@ import { ProfileImgComponent } from './dialogs/profile-img/profile-img.component
 import { HomeComponent } from './components/home/home.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     AddEditUserComponent,
     LoginComponent,
     ProfileImgComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
