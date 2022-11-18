@@ -11,7 +11,7 @@ export class PostProductComponent implements OnInit {
   categories!: Category[];
 
   // will hold single selection , lenght will be 1 always
-  selectedCategory!: Category[];
+  selectedCategory!: Category[]| null| undefined;
 
   constructor() { }
 
