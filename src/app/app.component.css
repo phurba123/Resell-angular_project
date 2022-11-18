@@ -24,3 +24,9 @@ resell-header {
 .content-margin {
     margin-top: 12vh;
 }
+
+@media screen and (max-width: 500px) {
+    .main-card .header {
+        height: 15vh;
+    }
+}

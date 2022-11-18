@@ -14,9 +14,32 @@
     <!-- sell-link -->
     <div class="sell-link">
         <!-- links-section -->
-        <div class="links-section" *ngIf="!isLoggedIn">
+        <div class="links-section" *ngIf="!(isLoggedIn$| async); else loggedIn">
             <button mat-button (click)="openLogin()">Login</button>
         </div>
+
+        <ng-template #loggedIn>
+            <button mat-icon-button class="loggedIn-userIcon" [mat-menu-trigger-for]="profileMenu">
+                <img src="{{currentUser?.userDetails?.profileImg}}" alt="profile-img">
+                <mat-icon>expand_more</mat-icon>
+            </button>
+
+            <mat-menu #profileMenu xPosition="before">
+                <div class="menu-userInfo-container">
+                    <div class="menu-img-container">
+                        <img src="{{currentUser?.userDetails?.profileImg}}" alt="img">
+                    </div>
+                    <div class="menu-greeting-container">
+                        <p>Hello</p>
+                        <h3 class="name">{{currentUser?.userDetails?.firstName}}</h3>
+                    </div>
+                </div>
+
+                <button mat-menu-item>My Posts</button>
+                <button mat-menu-item (click)="logoutUser()">Logout</button>
+            </mat-menu>
+        </ng-template>
+
         <button mat-raised-button  color="primary">
             <mat-icon>add</mat-icon>
             SELL

@@ -15,3 +15,8 @@ export interface User {
     password: string;
     profileImg?: any
 }
+
+export interface UserWithAuth {
+    authToken: string,
+    userDetails: User
+}

@@ -7,11 +7,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 // shared material modules
 const materialModules = [
-  MatCardModule, MatButtonModule, MatIconModule, MatInputModule, MatDialogModule, MatMenuModule
+  MatCardModule, MatButtonModule, MatIconModule, MatInputModule, MatDialogModule, MatMenuModule, MatSnackBarModule
 ]
 
 

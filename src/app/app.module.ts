@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddEditUserComponent } from './dialogs/add-edit-user/add-edit-user.component';
 import { LoginComponent } from './dialogs/login/login.component';
 import { ProfileImgComponent } from './dialogs/profile-img/profile-img.component';
+import { HomeComponent } from './components/home/home.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { ProfileImgComponent } from './dialogs/profile-img/profile-img.component
     HeaderComponent,
     AddEditUserComponent,
     LoginComponent,
-    ProfileImgComponent
+    ProfileImgComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { ProfileImgComponent } from './dialogs/profile-img/profile-img.component
     MatToolbarModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
