@@ -8,6 +8,7 @@ import { UserService } from 'src/app/services/user.service';
 import { ApiResponse } from 'src/app/models/apiresponse-model';
 import { deleteUserDetail, getMyDetailsFromStorage, Keys, localStorageSave } from 'src/app/shared/storage';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'resell-header',
@@ -18,6 +19,7 @@ export class HeaderComponent implements OnInit {
   isLoggedIn$: Observable<boolean>;
   addEditUser: any;
   currentUser!: UserWithAuth| null;
+  searchInput: FormControl = new FormControl();
 
   onDestroy$: Subject<boolean> = new Subject();
 

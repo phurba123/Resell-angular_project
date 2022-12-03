@@ -12,7 +12,11 @@ export const environment = {
 
   product_api: `${Api_BaseUrl}/products`,
   product_api_getAll: '/',
-  product_api_create: '/create'
+  product_api_create: '/create',
+
+  category_api: `${Api_BaseUrl}/categories`,
+  category_getAll: '/',
+  category_create: '/create'
 };
 
 /*

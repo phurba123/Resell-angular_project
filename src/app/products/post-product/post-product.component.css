@@ -7,3 +7,17 @@
 .container .categories {
     flex-basis: 40%;
 }
+
+.post {
+    padding: var(--m-y) var(--m-x);
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        margin-top: 15vh;
+    }
+
+    .hide {
+        display: none;
+    }
+}

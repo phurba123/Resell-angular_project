@@ -6,20 +6,25 @@
             <input matInput placeholder="Andrew" [formControl]="firstName">
             <mat-error *ngIf="firstName.hasError('required')">First Name is required</mat-error>
         </mat-form-field>
+
         <mat-form-field appearance="outline" class="margin-left" color="accent">
             <mat-label>Last Name</mat-label>
             <input matInput placeholder="Potter" [formControl]="lastName">
         </mat-form-field>
+
         <br>
+
         <mat-form-field appearance="outline" color="accent">
             <mat-label>Email</mat-label>
             <input matInput placeholder="potter@gmail.com" [formControl]="email">
             <mat-error *ngIf="email.invalid">{{validatorEmail(email)}}</mat-error>
         </mat-form-field>
+
         <mat-form-field appearance="outline" class="margin-left" color="accent">
             <mat-label>Contact</mat-label>
             <input matInput type="number" placeholder="2323443323" [formControl]="contact">
         </mat-form-field>
+        
         <mat-form-field appearance="outline" class="input-block" color="accent">
             <mat-label>Password</mat-label>
             <input matInput [type]="hidePassword ? 'password' : 'text'" [formControl]="password">

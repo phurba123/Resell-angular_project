@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar'
+import { BorderDirective } from '../Directives/border.directive';
 
 // shared material modules
 const materialModules = [
@@ -18,7 +19,9 @@ const materialModules = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    BorderDirective
+  ],
   imports: [
     CommonModule,
     ...materialModules,
@@ -30,7 +33,8 @@ const materialModules = [
     ...materialModules,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BorderDirective
   ]
 })
 export class SharedModule { }

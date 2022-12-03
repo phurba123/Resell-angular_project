@@ -2,6 +2,7 @@
 :root {
     --m-x : 10px;
     --m-y : 15px;
+    --primary-color: #3f51b5
 }
 
 html,
@@ -16,6 +17,18 @@ body {
 
 mat-form-field.input-block {
     display: block;
+}
+
+.border {
+    border: 1px solid gray;
+}
+
+.border.highlight {
+    border: 1px solid var(--primary-color);
+}
+
+.subtitle-bold {
+    font-weight: 500 !important;
 }
 
 

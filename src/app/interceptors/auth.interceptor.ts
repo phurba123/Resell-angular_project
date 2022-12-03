@@ -21,11 +21,11 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    // if request is public then pass req without adding authtoken
     if(request.context.get(IS_PUBLIC_API)) {
-      console.log('public api is true, so not adding auth header');
       return next.handle(request);
     }
-    console.log('interceptor is being called  called,public_api context is : ', request.context.get(IS_PUBLIC_API));
+    //if user is logged in then set authtoken, else suggest to login again
     const userDetail = getMyDetailsFromStorage(Keys.UserDetail);
     // Clone the request and set the new header in one step.
     if(userDetail) {

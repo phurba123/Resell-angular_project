@@ -1,0 +1,31 @@
+.address-field {
+    margin-left: var(--m-x);
+}
+
+.images-container {
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--m-x);
+}
+
+.images-container .img {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.post-button {
+    margin-top: var(--m-y);
+}
+.back-button {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    .back-button {
+        display: inline-block;
+        margin-left: var(--m-x);
+    }
+}

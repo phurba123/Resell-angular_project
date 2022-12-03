@@ -25,9 +25,16 @@ export class ProductService {
   }
 
   //post new product
-  postProduct(product: Product): Observable<ApiResponse> {
+  postProduct(product: any): Observable<ApiResponse> {
+    console.log('service post product: ', product);
+    // Create form data
+    // const formData = new FormData(); 
+        
+    // Store form name as "file" with file data
+    // formData.append("featuredImg", product.featuredImg, product.featuredImg.name);
+    // formData.append('msg', product.msg)
     return this._http.post<ApiResponse>(
       `${environment.product_api}${environment.product_api_create}`, product
     )
-  }
+  };
 }

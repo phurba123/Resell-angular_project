@@ -1,0 +1,49 @@
+<h2>Create a new post for {{currentCategory.categoryTypeName}}</h2>
+
+<form>
+
+    <mat-form-field appearance="outline" class="input-block">
+        <mat-label>Title</mat-label>
+        <input type="text" matInput [(ngModel)]="title" name="title">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input-block">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description" name="description"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Price</mat-label>
+        <input type="number" matInput [(ngModel)]="price" name="price">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input-block">
+        <mat-label>Address</mat-label>
+        <textarea matInput [(ngModel)]="location" name="location"></textarea>
+    </mat-form-field>
+
+    <div class="images-section">
+        <h3 class="subtitle-bold">Upload Image</h3>
+        <div class="images-container">
+            <!-- box for featured img -->
+            <!-- <div class="img" resellBorder [highlight]="true">
+                <mat-icon>add_a_photo</mat-icon>
+            </div> -->
+            <input type="file" name="featuredImg" (change)="changeFile($event)">
+
+            <!-- boxes for images -->
+            <!-- <div class="img" *ngFor="let image of noOfImages" resellBorder>
+                <mat-icon>add_a_photo</mat-icon>
+            </div> -->
+        </div>
+    </div>
+
+    <button mat-stroked-button color="primary" class="post-button" type="button" (click)="submitForm()">Post</button>
+    <!-- back button will only appear on small devices like mobile -->
+    <button mat-stroked-button color="warn" class="back-button" (click)="backButtonClicked()" type="button">Back</button>
+
+    <!-- <mat-form-field>
+        <mat-label>Upload Images</mat-label>
+        <input type="file">
+    </mat-form-field> -->
+</form>

@@ -7,7 +7,7 @@
 
     <!-- search place -->
     <div class="search-section">
-        <input placeholder="Find Products...">
+        <input placeholder="Find Products..." [formControl]="searchInput">
         <!-- <input type="text" placeholder="search "> -->
     </div>
 
@@ -40,7 +40,7 @@
             </mat-menu>
         </ng-template>
 
-        <button mat-raised-button  color="primary">
+        <button mat-raised-button  color="primary" routerLink="product/post">
             <mat-icon>add</mat-icon>
             SELL
         </button>
